@@ -6,10 +6,11 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
 from bs4 import BeautifulSoup
-from PIL import Image
-import io
-import pytesseract
-import fitz  # PyMuPDF
+# OCR imports disabled for Render deployment (Tesseract not available)
+# from PIL import Image
+# import io
+# import pytesseract
+# import fitz  # PyMuPDF
 from datetime import datetime, timedelta
 import jwt
 import secrets
