@@ -22,11 +22,7 @@ from database import create_user, get_user_by_email, update_last_login
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app, origins=[
-    "http://localhost:3000",
-    r"https://.*\.vercel\.app",
-    "https://certitrust-bot.vercel.app"
-], supports_credentials=True)
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=False)
 
 # Configuration
 SECRET_KEY = os.environ.get('JWT_SECRET_KEY', 'your-secret-key-change-in-production')
