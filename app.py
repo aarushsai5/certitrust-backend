@@ -23,7 +23,14 @@ from database import create_user, get_user_by_email, update_last_login
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+
+# Enable CORS for all routes and origins
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    return response
 
 # Configuration
 SECRET_KEY = os.environ.get('JWT_SECRET_KEY', 'your-secret-key-change-in-production')
