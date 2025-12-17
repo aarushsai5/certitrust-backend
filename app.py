@@ -8,7 +8,8 @@ import requests
 from bs4 import BeautifulSoup
 from PIL import Image
 import io
-from google.cloud import vision
+# Google Cloud Vision disabled for Render deployment
+# from google.cloud import vision
 from datetime import datetime, timedelta
 import jwt
 import secrets
