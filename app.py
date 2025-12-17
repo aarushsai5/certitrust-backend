@@ -24,8 +24,8 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app, origins=[
     "http://localhost:3000",
-    "https://certitrust-bot.vercel.app",
-    "https://*.vercel.app"
+    r"https://.*\.vercel\.app",
+    "https://certitrust-bot.vercel.app"
 ], supports_credentials=True)
 
 # Configuration
